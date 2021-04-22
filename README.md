@@ -3,7 +3,7 @@
 
 This repository contains a project that examines the use of <a href="https://arxiv.org/abs/1505.04597" target="_blank">UNet</a> model to segment the lung fields from a set of front view chest X-rays given in the <a href="https://www.isi.uu.nl/Research/Databases/SCR/" target="_blank">SCR dataset</a>, with the final model deployed in the <a href="https://share.streamlit.io/murtagh97/segmentator_unet/main" target="_blank">live app</a> built with <a href="https://streamlit.io/" target="_blank">Streamlit</a>.
 
-Feel free to reach out for any feedback or suggestion!
+Feel free to reach out if you have any feedback or suggestions!
 
 ## Project Summary
 * [Requirements](#requirements)

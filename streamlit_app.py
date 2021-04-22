@@ -81,8 +81,12 @@ def main_intro():
         * Display the training procedure and the model results on the respective datasets,
         * Upload an image and try different data augmentation methods,
         * Upload an image and predict the custom segmentation.
-        ''',
-        unsafe_allow_html=True
+        '''
+        )
+    col1.markdown(
+        '''
+        Feel free to reach out if you have any feedback or suggestions!
+        '''
         )
     
     title_img = Image.open('images/title_img.bmp')
