@@ -23,8 +23,8 @@ def main(args):
     unet_model = load_model()
 
     selected_box = st.sidebar.selectbox(
-    'Select Component',
-    ('Main', 'Model Details', 'Training and Results', 'Data Augmentator', 'Custom Segmentator')
+    'Select Section',
+    ('Main', 'Model Details', 'Training and Results', 'Upload Augmentation', 'Upload Segmentation')
     )
     
     if selected_box == 'Main':
@@ -76,11 +76,11 @@ def main_intro():
     col1, col2 = st.beta_columns((2, 1))
     col1.markdown(
         '''
-        It allows user to: 
+        Individual app sections allow user to: 
         * See the details of the final model and the underlying dataset,
         * Display the training procedure and the model results on the respective datasets,
         * Upload an image and try different data augmentation methods,
-        * Upload an image and predict the custom segmentation.
+        * Upload an image and predict the resulting segmentation.
         '''
         )
     col1.markdown(
@@ -163,7 +163,7 @@ def training(model):
             'Select Dataset', 
             ('Train Set', 'Dev Set', 'Test Set')
             )
-        if st.sidebar.button('Run Results', key='button'): 
+        if st.sidebar.button('Display Results', key='button'): 
 
             if eval_selector == 'Train Set':
                 col2.markdown('***Evaluation on Train Set:***')
@@ -183,7 +183,7 @@ def data_augmentation(model):
 
     st.title("Data Augmentator")
 
-    st.markdown("Upload a front view chest X-ray image of lung fields to generate different data augmentation methods.")
+    st.markdown("Upload a front view chest X-ray image of lung fields to display different data augmentation methods.")
 
     uploaded_img = st.file_uploader(
         "Upload Image", 
@@ -205,7 +205,7 @@ def data_augmentation(model):
         crop = st.sidebar.slider("Crop Size", 0.5, 1.0) 
         bright = st.sidebar.slider("Brightness Magnitude", 0.0, 1.0)
         rotation = st.sidebar.slider("Rotation Angle", 0.0, 2.0)
-        if st.sidebar.button('Run Augmentation', key='button'):
+        if st.sidebar.button('Display Augmentation', key='button'):
 
             img = Image.open(uploaded_img)
             img = tf.keras.preprocessing.image.img_to_array(img)
@@ -239,9 +239,9 @@ def data_augmentation(model):
             st.pyplot(plt)
 
 def segmentator(model, args):
-    st.title("Custom Segmentator")
+    st.title("Upload Segmentation")
     
-    st.markdown("Upload a front view chest X-ray image of lung fields to generate custom segmentation.")
+    st.markdown("Upload a front view chest X-ray image of lung fields to display the predicted segmentation result.")
 
     uploaded_img = st.file_uploader(
         "Upload Image", 
@@ -251,8 +251,8 @@ def segmentator(model, args):
 
     st.markdown(
         """
-        <a href="https://github.com/murtagh97/segmentator_unet/tree/main/images" target="_blank">Examples</a> of chest X-ray 
-        images from the SCR train and test sets.  \n
+        Examples of chest X-ray images from the SCR train and test sets can be found 
+        <a href="https://github.com/murtagh97/segmentator_unet/tree/main/images" target="_blank">here</a> .  \n
         
         Additional out-of-sample examples of chest X-ray images can be found, e.g., 
         <a href="https://commons.wikimedia.org/wiki/File:Normal_posteroanterior_(PA)_chest_radiograph_(X-ray).jpg" target="_blank">here</a>,
