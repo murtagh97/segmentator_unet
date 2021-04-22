@@ -36,10 +36,10 @@ def main(args):
     if selected_box == 'Training and Results':
         training(unet_model)
 
-    if selected_box == 'Data Augmentator':
+    if selected_box == 'Upload Augmentation':
         data_augmentation(unet_model)
 
-    if selected_box == 'Custom Segmentator':
+    if selected_box == 'Upload Segmentation':
         segmentator(unet_model, args) 
 
 @st.cache(suppress_st_warning=True, allow_output_mutation=True)
@@ -181,7 +181,7 @@ def training(model):
     
 def data_augmentation(model):
 
-    st.title("Data Augmentator")
+    st.title("Upload Augmentation")
 
     st.markdown("Upload a front view chest X-ray image of lung fields to display different data augmentation methods.")
 
