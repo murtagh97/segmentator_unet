@@ -4,12 +4,12 @@
 This repository contains a project that examines the use of <a href="https://arxiv.org/abs/1505.04597" target="_blank">UNet</a> model to segment the lung fields from a set of front view chest X-rays, with the final model deployed in the <a href="https://share.streamlit.io/murtagh97/segmentator_unet/main" target="_blank">live app</a> built with <a href="https://streamlit.io/" target="_blank">Streamlit</a>.
 
 ## Project Summary
-* [Requirements](#)
-* [Dataset](#)
-* [Trained Model](#)
-* [Model Scripts](#)
-* [Colab Notebooks](#)
-* [Streamlit Deployments](#)
+* [Requirements](#requirements)
+* [Dataset](#dataset)
+* [Trained Model](#trained-model)
+* [Model Scripts](#model-scripts)
+* [Colab Notebooks](#colab-notebooks)
+* [Streamlit Deployments](#streamlit-deployment)
 
 ### Requirements
 Please check the <a href="https://github.com/murtagh97/segmentator_unet/blob/main/requirements.txt" target="_blank">requirements.txt</a> file for the current versions.
