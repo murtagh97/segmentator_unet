@@ -1,4 +1,4 @@
-# Lung Fields Segmentator: Model and Deployment
+# Lung Fields Segmentation: Model and Deployment
 <a href="https://share.streamlit.io/murtagh97/segmentator_unet/main" target="_blank">live app</a>
 
 This repository contains a project that examines the use of <a href="https://arxiv.org/abs/1505.04597" target="_blank">UNet</a> model to segment the lung fields from a set of front view chest X-rays given in the <a href="https://www.isi.uu.nl/Research/Databases/SCR/" target="_blank">SCR dataset</a>, with the final model deployed in the <a href="https://share.streamlit.io/murtagh97/segmentator_unet/main" target="_blank">live app</a> built with <a href="https://streamlit.io/" target="_blank">Streamlit</a>.
@@ -18,6 +18,7 @@ Please check the <a href="https://github.com/murtagh97/segmentator_unet/blob/mai
 
 ### Dataset
 The SCR dataset that we were working can be found <a href="https://www.isi.uu.nl/Research/Databases/SCR/" target="_blank">here</a>. More information about the nature of the data and the preprocessing can be found in the deployed app.
+
 Folders <a href="https://github.com/murtagh97/segmentator_unet/tree/main/images/test_samples" target="_blank">images/train_samples</a> and <a href="https://github.com/murtagh97/segmentator_unet/tree/main/images/train_samples" target="_blank">images/test_samples</a> contains samples from the train and test sets.
 
 The data folder can be found **TODO**.
