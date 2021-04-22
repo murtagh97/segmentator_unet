@@ -171,7 +171,7 @@ def training(model):
                 col2.markdown('***Evaluation on Test Set:***')
                 col2.markdown(f'Test Loss: 0.1166  \n Test SDC: 0.9747  \n Test HDC: 0.9749  \n Test IoU: 0.9505  \n Dev Acc: 0.2938')
     else:
-        col2.markdown("**Check the *Display Model Results* box to display model results on the selected dataset.**")
+        col2.markdown("**Check the *Display Model Results* box to display the model results on the selected dataset.**")
     
 def data_augmentation(model):
 
@@ -181,7 +181,7 @@ def data_augmentation(model):
 
     st.markdown(
         """
-         Additional samples of chest X-ray images can be found, e.g., 
+         Additional examples of chest X-ray images can be found, e.g., 
          <a href="https://commons.wikimedia.org/wiki/File:Normal_posteroanterior_(PA)_chest_radiograph_(X-ray).jpg" target="_blank">here</a>,
          <a href="https://commons.wikimedia.org/wiki/File:Chest_Xray_PA_3-8-2010.png" target="_blank">here</a> and 
          <a href="https://www.kaggle.com/tolgadincer/labeled-chest-xray-images" target="_blank">here</a> .
@@ -239,7 +239,7 @@ def segmentator(model, args):
 
     st.markdown(
         """
-         Additional samples of chest X-ray images can be found, e.g., 
+         Additional out-of-sample examples of chest X-ray images can be found, e.g., 
          <a href="https://commons.wikimedia.org/wiki/File:Normal_posteroanterior_(PA)_chest_radiograph_(X-ray).jpg" target="_blank">here</a>,
          <a href="https://commons.wikimedia.org/wiki/File:Chest_Xray_PA_3-8-2010.png" target="_blank">here</a> and 
          <a href="https://www.kaggle.com/tolgadincer/labeled-chest-xray-images" target="_blank">here</a> .
