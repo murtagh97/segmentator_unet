@@ -241,7 +241,9 @@ def segmentator(model, args):
 
     st.markdown(
         """
-        <a href="https://github.com/murtagh97/segmentator_unet/tree/main/images" target="_blank">Examples</a> of chest X-ray images from the train and test sets.
+        <a href="https://github.com/murtagh97/segmentator_unet/tree/main/images" target="_blank">Examples</a> of chest X-ray 
+        images from the train and test sets.  \n
+        
         Additional out-of-sample examples of chest X-ray images can be found, e.g., 
         <a href="https://commons.wikimedia.org/wiki/File:Normal_posteroanterior_(PA)_chest_radiograph_(X-ray).jpg" target="_blank">here</a>,
         <a href="https://commons.wikimedia.org/wiki/File:Chest_Xray_PA_3-8-2010.png" target="_blank">here</a> and 

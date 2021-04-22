@@ -18,7 +18,7 @@ Please check the <a href="https://github.com/murtagh97/segmentator_unet/blob/mai
 
 ### Dataset
 The SCR dataset that we were working can be found <a href="https://www.isi.uu.nl/Research/Databases/SCR/" target="_blank">here</a>. More information about the nature of the data and the preprocessing can be found in the deployed app.
-Folders <a href="https://github.com/murtagh97/segmentator_unet/tree/main/images/test_samples" target="_blank">images/train_samples</a> and <a href="https://github.com/murtagh97/segmentator_unet/tree/main/images/train_samples" target="_blank">mages/test_samples</a> contains samples from the train and test datasets.
+Folders <a href="https://github.com/murtagh97/segmentator_unet/tree/main/images/test_samples" target="_blank">images/train_samples</a> and <a href="https://github.com/murtagh97/segmentator_unet/tree/main/images/train_samples" target="_blank">images/test_samples</a> contains samples from the train and test sets.
 
 The data folder can be found **TODO**.
 
@@ -32,7 +32,7 @@ Achieved results are shown in the table below.
 | Dice Coef. | 0.9824 | 0.9807 | 0.9747 |
 | IoU | 0.9650 | 0.9614 | 0.9505 |
 
-Information about the model architecture, training settings and hyperparameters can be found in the deployed app.
+Further information about the model architecture, training settings and hyperparameters can be found in the deployed app.
 
 ### Model Scripts
 
