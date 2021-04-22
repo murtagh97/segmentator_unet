@@ -24,7 +24,7 @@ def main(args):
 
     selected_box = st.sidebar.selectbox(
     'Select Component',
-    ('Main', 'Model Details', 'Training and Results', 'Data Augmentation', 'Custom Segmentator')
+    ('Main', 'Model Details', 'Training and Results', 'Data Augmentator', 'Custom Segmentator')
     )
     
     if selected_box == 'Main':
@@ -36,7 +36,7 @@ def main(args):
     if selected_box == 'Training and Results':
         training(unet_model)
 
-    if selected_box == 'Data Augmentation':
+    if selected_box == 'Data Augmentator':
         data_augmentation(unet_model)
 
     if selected_box == 'Custom Segmentator':
@@ -102,6 +102,7 @@ def model_info(model, args):
     exp_architect = st.beta_expander("Model Architecture")
     exp_architect.markdown(
         f'* *Architecture:* <a href="https://lmb.informatik.uni-freiburg.de/people/ronneber/u-net/u-net-architecture.png" target="_blank">UNet</a>,  \n'
+        f'* *Upsample method:* transposed convolutions,  \n'
         f'* *Number of trainable parameters:* {model.trainable_params},  \n'
         f'* *Max filter size:* {args.max_filter_size}.  \n',
         unsafe_allow_html=True
@@ -175,7 +176,7 @@ def training(model):
     
 def data_augmentation(model):
 
-    st.title("Data Augmentation")
+    st.title("Data Augmentator")
 
     st.markdown("Upload a front view chest X-ray image of lung fields to generate different data augmentation methods.")
 
