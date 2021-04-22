@@ -58,12 +58,9 @@ def main_intro():
     st.title("Lung Fields Segmentation from Chest X-rays")
     st.markdown(
         """
-        by Július Rábek
-        <a href="https://www.linkedin.com/in/julius-rabek/" target="_blank">
-          <img src="https://static-exp1.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" alt="" width="19" height="19" style="margin-bottom: 5px"/>
-        </a>  \n
+        by Július Rábek  \n
 
-        <a href="https://github.com/murtagh97" target="_blank">GitHub</a> <a href="https://www.linkedin.com/in/julius-rabek/" target="_blank">LinkedIn</a>
+        <a href="https://github.com/murtagh97/segmentator_unet" target="_blank">GitHub</a> <a href="https://www.linkedin.com/in/julius-rabek/" target="_blank">LinkedIn</a>
         """,
         unsafe_allow_html=True
         )
