@@ -67,7 +67,8 @@ def main_intro():
 
     st.markdown(
         """
-        This app examines the use of <a href="https://arxiv.org/abs/1505.04597" target="_blank">UNet</a> model to segment the lung fields from a set of front view chest X-rays.
+        This app examines the use of <a href="https://arxiv.org/abs/1505.04597" target="_blank">UNet</a> model to segment the 
+        lung fields from a set of front view chest X-rays given in the <a href="https://www.isi.uu.nl/Research/Databases/SCR/" target="_blank">SCR dataset</a>.
         """,
         unsafe_allow_html=True
         )
@@ -76,7 +77,7 @@ def main_intro():
     col1.markdown(
         '''
         It allows user to: 
-        * See the details of the final model and the <a href="https://www.isi.uu.nl/Research/Databases/SCR/" target="_blank">SCR dataset</a> it was trained on,
+        * See the details of the final model and the underlying dataset,
         * Display the training procedure and the model results on the respective datasets,
         * Upload an image and try different data augmentation methods,
         * Upload an image and predict the custom segmentation.
@@ -240,10 +241,11 @@ def segmentator(model, args):
 
     st.markdown(
         """
-         Additional out-of-sample examples of chest X-ray images can be found, e.g., 
-         <a href="https://commons.wikimedia.org/wiki/File:Normal_posteroanterior_(PA)_chest_radiograph_(X-ray).jpg" target="_blank">here</a>,
-         <a href="https://commons.wikimedia.org/wiki/File:Chest_Xray_PA_3-8-2010.png" target="_blank">here</a> and 
-         <a href="https://www.kaggle.com/tolgadincer/labeled-chest-xray-images" target="_blank">here</a> .
+        <a href="https://github.com/murtagh97/segmentator_unet/tree/main/images" target="_blank">Examples</a> of chest X-ray images from the train and test sets.
+        Additional out-of-sample examples of chest X-ray images can be found, e.g., 
+        <a href="https://commons.wikimedia.org/wiki/File:Normal_posteroanterior_(PA)_chest_radiograph_(X-ray).jpg" target="_blank">here</a>,
+        <a href="https://commons.wikimedia.org/wiki/File:Chest_Xray_PA_3-8-2010.png" target="_blank">here</a> and 
+        <a href="https://www.kaggle.com/tolgadincer/labeled-chest-xray-images" target="_blank">here</a> .
         """,
         unsafe_allow_html=True
         )
