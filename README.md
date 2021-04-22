@@ -1,7 +1,9 @@
 # Lung Fields Segmentator: Model and Deployment
 <a href="https://share.streamlit.io/murtagh97/segmentator_unet/main" target="_blank">live app</a>
 
-This repository contains a project that examines the use of <a href="https://arxiv.org/abs/1505.04597" target="_blank">UNet</a> model to segment the lung fields from a set of front view chest X-rays, with the final model deployed in the <a href="https://share.streamlit.io/murtagh97/segmentator_unet/main" target="_blank">live app</a> built with <a href="https://streamlit.io/" target="_blank">Streamlit</a>.
+This repository contains a project that examines the use of <a href="https://arxiv.org/abs/1505.04597" target="_blank">UNet</a> model to segment the lung fields from a set of front view chest X-rays given in the <a href="https://www.isi.uu.nl/Research/Databases/SCR/" target="_blank">SCR dataset</a>, with the final model deployed in the <a href="https://share.streamlit.io/murtagh97/segmentator_unet/main" target="_blank">live app</a> built with <a href="https://streamlit.io/" target="_blank">Streamlit</a>.
+
+Feel free to reach out for any feedback or suggestion!
 
 ## Project Summary
 * [Requirements](#requirements)
@@ -15,14 +17,15 @@ This repository contains a project that examines the use of <a href="https://arx
 Please check the <a href="https://github.com/murtagh97/segmentator_unet/blob/main/requirements.txt" target="_blank">requirements.txt</a> file for the current version.
 
 ### Dataset
-Source of the data used for model training is <a href="https://www.isi.uu.nl/Research/Databases/SCR/" target="_blank">SCR dataset</a>. More information about the data and preprocessing can be found in the deployed app.
+The SCR dataset that we were working can be found <a href="https://www.isi.uu.nl/Research/Databases/SCR/" target="_blank">here</a>. More information about the nature of the data and the preprocessing can be found in the deployed app.
+Folders <a href="https://github.com/murtagh97/segmentator_unet/tree/main/images/test_samples" target="_blank">images/train_samples</a> and <a href="https://github.com/murtagh97/segmentator_unet/tree/main/images/train_samples" target="_blank">mages/test_samples</a> contains samples from the train and test datasets.
 
 The data folder can be found **TODO**.
 
 ### Trained Model
-Folder *trained_model* contains the weights and the training history of the final model.
+Folder <a href="https://github.com/murtagh97/segmentator_unet/tree/main/trained_model" target="_blank">trained_model</a> contains the weights and the training history of the final model.
+Achieved results are shown in the table below.
 
-|Results|
 | Metric | Train | Dev | Test |
 | --- | --- | --- | --- |
 | Loss | 0.1089 | 0.1109 | 0.1166 |
@@ -57,4 +60,4 @@ Information about the model architecture, training settings and hyperparameters 
 | streamlit_app_local.py | Recommended and tested deployment on Colab via notebooks_colab/streamlit_app_notebook.ipynb. Works directly with the train-dev-test datasets that need to be created. Slower, but contains some additional features.|
 
 ## Acknowledgements
-Many thanks to Streamlit Sharing for free hosting! :upside_down_face:
+Many thanks to Streamlit Sharing for the free hosting! :upside_down_face:
