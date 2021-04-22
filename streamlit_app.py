@@ -4,6 +4,7 @@ import random
 import numpy as np
 import streamlit as st 
 import tensorflow as tf
+import matplotlib.pyplot as plt
 
 from PIL import Image
 from arg_parser import args
@@ -187,14 +188,23 @@ def segmentator(model, args):
         img = ( tf.cast(img, tf.float32) / 255.0)
         img = np.expand_dims(img[:,:,0], axis = 2)
 
-        img_plotly = model.predict_single_img(
-            img,
-            size = (400,980),
-            st_mode = True
-            )
+        one_img_batch = img[tf.newaxis, ...]
+        pred_mask = model.model.predict(one_img_batch)
+
+        display_list = [img, pred_mask, img*pred_mask]
+        title_list = ["Input Image", "Predicted Mask", "Segmented Result"]
+
+        plt.figure(figsize = (15,15))
+        for i in range(len(display_list)):
+            plt.subplot(1, len(display_list), i+1)
+            plt.title(title_list[i])
+            plt.imshow(tf.keras.preprocessing.image.array_to_img(display_list[i]), cmap = "gray")
+            plt.xticks([])
+            plt.yticks([])
+            plt.axis('off')
         
         st.write(
-            img_plotly, 
+            plt, 
             use_column_width=True
             )
 
