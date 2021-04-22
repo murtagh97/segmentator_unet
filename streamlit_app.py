@@ -251,7 +251,7 @@ def segmentator(model, args):
 
     st.markdown(
         """
-        Examples of chest X-ray images from the SCR dataset, both train and test sets, can be found 
+        Examples of chest X-ray images from the SCR dataset, both the train and test sets, can be found 
         <a href="https://github.com/murtagh97/segmentator_unet/tree/main/images" target="_blank">here</a> .  \n
         
         Additional out-of-sample examples of chest X-ray images can be found, e.g., 
