@@ -19,7 +19,7 @@ Please check the <a href="https://github.com/murtagh97/segmentator_unet/blob/mai
 ### Dataset
 The SCR dataset can be found <a href="https://www.isi.uu.nl/Research/Databases/SCR/" target="_blank">here</a>. More information about the nature of the data and the preprocessing can be found in the deployed app.
 
-Folders <a href="https://github.com/murtagh97/segmentator_unet/tree/main/images/test_samples" target="_blank">images/train_samples</a> and <a href="https://github.com/murtagh97/segmentator_unet/tree/main/images/train_samples" target="_blank">images/test_samples</a> contain X-ray samples from the train and test sets.
+Folders <a href="https://github.com/murtagh97/segmentator_unet/tree/main/images/test_samples" target="_blank">images/train_samples</a> and <a href="https://github.com/murtagh97/segmentator_unet/tree/main/images/train_samples" target="_blank">images/test_samples</a> contain X-ray samples from the SCR dataset train and test sets.
 
 The data folder can be found **TODO**.
 
