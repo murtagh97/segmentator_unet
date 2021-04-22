@@ -9,10 +9,10 @@ This repository contains a project that examines the use of <a href="https://arx
 * [Trained Model](#trained-model)
 * [Model Scripts](#model-scripts)
 * [Colab Notebooks](#colab-notebooks)
-* [Streamlit Deployments](#streamlit-deployment)
+* [Streamlit Deployments](#streamlit-deployments)
 
 ### Requirements
-Please check the <a href="https://github.com/murtagh97/segmentator_unet/blob/main/requirements.txt" target="_blank">requirements.txt</a> file for the current versions.
+Please check the <a href="https://github.com/murtagh97/segmentator_unet/blob/main/requirements.txt" target="_blank">requirements.txt</a> file for the current version.
 
 ### Dataset
 Source of the data used for model training is <a href="https://www.isi.uu.nl/Research/Databases/SCR/" target="_blank">SCR dataset</a>. More information about the data and preprocessing can be found in the deployed app.
@@ -22,7 +22,7 @@ The data folder can be found **TODO**.
 ### Trained Model
 Folder *trained_model* contains the weights and training history of the final model.
 
-**Final Model Results**
+Results
 | Metric | Train | Dev | Test |
 | --- | --- | --- | --- |
 | Loss | 0.1089 | 0.1109 | 0.1166 |
@@ -57,4 +57,4 @@ Information about the model architecture, training settings and hyperparameters 
 | streamlit_app_local.py | Recommended and tested deployment on Colab via notebooks_colab/streamlit_app_notebook.ipynb. Works directly with the train-dev-test datasets that need to be created. Slower, but contains some additional features.|
 
 ## Acknowledgements
-Many thanks to Streamlit Sharing for free hosting.
+Many thanks to Streamlit Sharing for free hosting! :upside_down_face:
