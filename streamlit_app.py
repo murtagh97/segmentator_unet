@@ -181,6 +181,12 @@ def data_augmentation(model):
 
     st.markdown("Upload a front view chest X-ray image of lung fields to generate different data augmentation methods.")
 
+    uploaded_img = st.file_uploader(
+        "Upload Image", 
+        type = ['bmp', 'jpg', 'jpeg', 'png'], 
+        accept_multiple_files= False
+        )
+    
     st.markdown(
         """
          Additional examples of chest X-ray images can be found, e.g., 
@@ -189,12 +195,6 @@ def data_augmentation(model):
          <a href="https://www.kaggle.com/tolgadincer/labeled-chest-xray-images" target="_blank">here</a> .
         """,
         unsafe_allow_html=True
-        )
-
-    uploaded_img = st.file_uploader(
-        "Upload Image", 
-        type = ['bmp', 'jpg', 'jpeg', 'png'], 
-        accept_multiple_files= False
         )
     
     if uploaded_img is not None:
@@ -248,7 +248,7 @@ def segmentator(model, args):
     st.markdown(
         """
         <a href="https://github.com/murtagh97/segmentator_unet/tree/main/images" target="_blank">Examples</a> of chest X-ray 
-        images from the train and test sets.  \n
+        images from the SCR train and test sets.  \n
         
         Additional out-of-sample examples of chest X-ray images can be found, e.g., 
         <a href="https://commons.wikimedia.org/wiki/File:Normal_posteroanterior_(PA)_chest_radiograph_(X-ray).jpg" target="_blank">here</a>,
