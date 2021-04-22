@@ -239,6 +239,12 @@ def segmentator(model, args):
     
     st.markdown("Upload a front view chest X-ray image of lung fields to generate custom segmentation.")
 
+    uploaded_img = st.file_uploader(
+        "Upload Image", 
+        type = ['bmp', 'jpg', 'jpeg', 'png'], 
+        accept_multiple_files= False
+        )
+
     st.markdown(
         """
         <a href="https://github.com/murtagh97/segmentator_unet/tree/main/images" target="_blank">Examples</a> of chest X-ray 
@@ -250,12 +256,6 @@ def segmentator(model, args):
         <a href="https://www.kaggle.com/tolgadincer/labeled-chest-xray-images" target="_blank">here</a> .
         """,
         unsafe_allow_html=True
-        )
-
-    uploaded_img = st.file_uploader(
-        "Upload Image", 
-        type = ['bmp', 'jpg', 'jpeg', 'png'], 
-        accept_multiple_files= False
         )
 
     if uploaded_img is not None:
