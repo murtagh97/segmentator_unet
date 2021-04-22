@@ -189,7 +189,10 @@ def segmentator(model, args):
         img = np.expand_dims(img[:,:,0], axis = 2)
 
         one_img_batch = img[tf.newaxis, ...]
+        
         pred_mask = model.model.predict(one_img_batch)
+        pred_mask = np.reshape(pred_mask, (args.mask_size, args.mask_size, 1))
+        pred_mask = np.array(pred_mask > 0.5, dtype=int)
 
         display_list = [img, pred_mask, img*pred_mask]
         title_list = ["Input Image", "Predicted Mask", "Segmented Result"]
