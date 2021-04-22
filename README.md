@@ -42,7 +42,7 @@ Further information about the model architecture, training settings and hyperpar
 | main.py | Runs the model training.|
 | model_object.py | Contains the main *UnetModel* object that uses data_generator.py and inherits from data_visualizer.py.|
 | data_generator.py | Contains the *DataGenerator* object that loads the raw data, runs the augmentation and prepares the train-dev-test tf.data pipelines. |
-| data_visualizer.py | Contains the *DataVisualizer* that plots the training procedure, segmentation results, etc.|
+| data_visualizer.py | Contains the *DataVisualizer* object that plots the training procedure, segmentation results, etc.|
 | arg_parser.py | Contains parser with arguments that model training and inference can be controlled with. The defaults are set to the parameters of the final model.|
 | utils/loss_functions.py | Contains custom loss functions used for the model training.|
 | utils/train_config.py | Contains METRICS and CALLBACKS used for the model training.|
@@ -51,7 +51,7 @@ Further information about the model architecture, training settings and hyperpar
 
 | Notebook | Description |
 | --- | --- |
-| notebooks_colab/main_notebook.ipynb | Interactive notebook that allows to train a new model or to load the trained model, to display the training procedure and the segmentation results.|
+| notebooks_colab/main_notebook.ipynb | Interactive notebook that allows to train a new model from scratch, to load the trained model, to display the training procedure and the segmentation results.|
 | notebooks_colab/streamlit_app_notebook.ipynb | Notebook that enables to run the local app streamlit_app_local.py on Colab.|
 
 ### Streamlit Deployments
