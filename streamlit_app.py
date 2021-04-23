@@ -24,7 +24,7 @@ def main(args):
 
     selected_box = st.sidebar.selectbox(
     'Select Section',
-    ('Main', 'Model Details', 'Training and Results', 'Upload Augmentation', 'Upload Segmentation')
+    ('Main', 'Model Details', 'Training and Results', 'Create Augmentation', 'Create Segmentation')
     )
     
     if selected_box == 'Main':
@@ -36,10 +36,10 @@ def main(args):
     if selected_box == 'Training and Results':
         training(unet_model)
 
-    if selected_box == 'Upload Augmentation':
+    if selected_box == 'Create Augmentation':
         data_augmentation(unet_model)
 
-    if selected_box == 'Upload Segmentation':
+    if selected_box == 'Create Segmentation':
         segmentator(unet_model, args) 
 
 @st.cache(suppress_st_warning=True, allow_output_mutation=True)
@@ -181,7 +181,7 @@ def training(model):
     
 def data_augmentation(model):
 
-    st.title("Upload Augmentation")
+    st.title("Create Augmentation")
 
     st.markdown("Upload a front view chest X-ray image of lung fields to display different data augmentation methods.")
 
@@ -239,7 +239,7 @@ def data_augmentation(model):
             st.pyplot(plt)
 
 def segmentator(model, args):
-    st.title("Upload Segmentation")
+    st.title("Create Segmentation")
     
     st.markdown("Upload a front view chest X-ray image of lung fields to display the predicted segmentation result.")
 
