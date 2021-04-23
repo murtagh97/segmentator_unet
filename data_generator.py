@@ -16,13 +16,10 @@ class DataGenerator:
         """Alphabetically sort the filenames in given directory.
 
         Parameters
-          - work_dir: Working directory that contains folder with the data, i.e., lungs_data folder.
-          - arg_set: String argument, either fold1 or fold2, where fold1 stores train data, fold2 stores test data. 
-          - arg_side: String argument, either right or left, where fold1 stores train data, fold2 stores test data. 
-          - arg_file: String argument, either gif, for masks, or bmp, for images.
+          -
                
         Returns
-          - Calculated value of the Soft Dice Coefficient.
+          - 
         """
         work_dir = os.getcwd()
         data_dir = os.path.join(work_dir, 'lungs_data', fold, side)
@@ -35,14 +32,7 @@ class DataGenerator:
     def _get_masks_from_dir(
         fold
         ):
-        """Alphabetically sort the filenames in given directory.
-
-        Parameters
-          - work_dir: Working directory that contains folder with the data, i.e., lungs data folder.
-          - arg_set: String argument, either fold1 or fold2, where fold1 contains the train data, fold2 contains the test data.  
-              
-        Returns
-          - Calculated value of the Soft Dice Coefficient.
+        """
         """
 
         filenames_left = DataGenerator._sort_filenames(fold, 'left', 'gif')
@@ -66,14 +56,7 @@ class DataGenerator:
     def _get_images_from_dir(
         fold
         ):
-        """Alphabetically sort the filenames in given directory.
-
-        Parameters
-          - work_dir: Working directory that contains folder with the data, i.e., lungs data folder.
-          - arg_set: String argument, either fold1 or fold2, where fold1 contains the train data, fold2 contains the test data.  
-              
-        Returns
-          - Calculated value of the Soft Dice Coefficient.
+        """
         """
 
         filenames = DataGenerator._sort_filenames(fold, 'images', 'bmp') 
