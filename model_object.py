@@ -26,6 +26,8 @@ class UnetModel(DataVisualiser):
     def prepare_data(
         self, args
         ):
+        """Create the train-dev-test tf.data pipelines.
+        """
 
         self.wf_train, self.wf_dev, self.wf_test = DataGenerator.get_tf_wf(
             train_dev_split = args.train_dev_split,
@@ -38,7 +40,7 @@ class UnetModel(DataVisualiser):
             bright = args.bright,
             rot_angle = args.rot_angle,
             random_seed = args.random_seed
-            )
+        )
 
         self.steps_per_epoch = DataGenerator.ds_size_train(args.train_dev_split) // args.batch_size
 
@@ -57,6 +59,8 @@ class UnetModel(DataVisualiser):
         dropout, 
         max_pool
         ):
+        """Downsampling block of the UNet architecture.
+        """
         conv = tf.keras.layers.Conv2D(filter_size, kernel_size = 3, padding = 'same', activation = tf.nn.relu, kernel_regularizer = tf.keras.regularizers.l2(args.l2), kernel_initializer = 'he_normal')(input_layer)
         conv = tf.keras.layers.Conv2D(filter_size, kernel_size = 3, padding = 'same', activation = tf.nn.relu, kernel_regularizer = tf.keras.regularizers.l2(args.l2), kernel_initializer = 'he_normal')(conv)
         
@@ -76,6 +80,8 @@ class UnetModel(DataVisualiser):
         conv_layer, 
         filter_size
         ):
+        """Upsampling block of the UNet architecture via the Conv2DTranspose upsampling method.
+        """
         X = tf.keras.layers.Conv2DTranspose(filter_size, kernel_size = 3, strides = 2, padding = 'same', kernel_regularizer = tf.keras.regularizers.l2(args.l2), kernel_initializer = 'he_normal')(input_layer)
         X = tf.keras.layers.Concatenate()([X, conv_layer])
         X = tf.keras.layers.Conv2D(filter_size, kernel_size = 3, padding = "same", activation = tf.nn.relu, kernel_regularizer = tf.keras.regularizers.l2(args.l2), kernel_initializer = 'he_normal')(X)
@@ -90,6 +96,8 @@ class UnetModel(DataVisualiser):
         conv_layer, 
         filter_size
         ):
+        """Upsampling block of the UNet architecture via the UpSample upsampling method.
+        """
         X = tf.keras.layers.UpSampling2D(size = (2,2))(input_layer)
         X = tf.keras.layers.Conv2D(filter_size, kernel_size = 2, padding = "same", activation = tf.nn.relu, kernel_regularizer = tf.keras.regularizers.l2(args.l2), kernel_initializer = 'he_normal')(X)
         X = tf.keras.layers.Concatenate()([X, conv_layer])
@@ -102,6 +110,9 @@ class UnetModel(DataVisualiser):
     def _build_model(
         args
         ):
+        """Build the model from the downsampling and upsampling blocks and compile.
+        """
+        
         inputs = tf.keras.layers.Input((args.mask_size, args.mask_size, 1))
 
         conv1, pool1 = UnetModel._downsampling(args, input_layer = inputs, filter_size = args.max_filter_size / 16, dropout = False, max_pool = True)
@@ -140,18 +151,24 @@ class UnetModel(DataVisualiser):
     def create_model(
         self, args
         ):
+        """Create the model via _build_model function.
+        """
         self.model = UnetModel._build_model(args)
     
     def load_best_model(
         self, args, load_dir
         ):
+        """Load the weights of theb best model from its directory. Load its training history as well.
+        """
         self.model = UnetModel._build_model(args)
         self.model.load_weights(load_dir)
-        self.history = pickle.load(open(load_dir, "rb")) #open(os.path.join(load_dir, 'history')
+        self.history = pickle.load(open(load_dir, "rb"))
         
     def train(
         self, args
         ):
+        """Train the model and save the best results.
+        """
 
         print('Training started:')
         history = self.model.fit(
@@ -168,6 +185,8 @@ class UnetModel(DataVisualiser):
     def evaluate(
         self, args
         ):
+        """Evaluate the model on train-dev-test sets.
+        """
         print('Evaluating on train set:')
         loss, sdc, hdc, iou, acc = self.model.evaluate(self.wf_train, steps = self.steps_per_epoch, verbose=0)
         print(f'Train loss: {loss:.5f} - Train sdc: {sdc:.5f} - Train hdc: {hdc:.5f} - Train iou: {iou:.5f} - Train acc: {acc:.5f}')
@@ -183,11 +202,15 @@ class UnetModel(DataVisualiser):
     def model_summary(
         self
         ):
+        """Print model summary.
+        """
         return self.model.summary()
 
     def get_trainable_params(
         self
         ):
+        """Count the trainable parameters in the model.
+        """
         self.trainable_params = np.sum([np.prod(v.get_shape()) for v in self.model.trainable_weights])
     
 

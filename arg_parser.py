@@ -88,7 +88,7 @@ parser.add_argument(
     "--min_lr", 
     default = 10e-13, 
     type = int, 
-    help = "Base learning rate."
+    help = "Min learning rate."
     )
 parser.add_argument(
     "--shuffle", 

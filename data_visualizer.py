@@ -19,6 +19,8 @@ class DataVisualiser:
         size = (800, 1400),
         st_mode = False
         ):
+        """Plot the training procedure curves.
+        """
         acc = self.history['accuracy']
         val_acc = self.history['val_accuracy']
         loss = self.history['loss']
@@ -73,12 +75,13 @@ class DataVisualiser:
         else:
             fig.show()
 
-    ### - function to display predicted mask - ###
     @staticmethod
     def _get_bin_mask(
         output, 
         mask_size = args.mask_size
         ):
+        """Function to display predicted mask.
+        """
         data = np.reshape(output, (mask_size, mask_size, 1))
         mask = np.array(data > 0.5, dtype=int)
         return mask
@@ -89,6 +92,8 @@ class DataVisualiser:
         title_list,
         size
         ):
+        """Display the images from the display_list.
+        """
         n_plots = len(display_list)
         fig = make_subplots(
             rows=1, cols= n_plots, 
@@ -121,6 +126,8 @@ class DataVisualiser:
         size = (500,1000),
         st_mode = False
         ):
+        """Display the final predictions: input image, input mask, predicted mask, highlighted masks difference.
+        """
         if dataset == self.wf_train:
             name = "Train"
         elif dataset == self.wf_dev:
@@ -162,6 +169,8 @@ class DataVisualiser:
         size = (500,1000),
         st_mode = False
         ):
+        """Display the final prediction on one image: input image, predicted mask, segmented result.
+        """
 
         one_img_batch = img[tf.newaxis, ...]
         pred_mask = self.model.predict(one_img_batch)
@@ -177,7 +186,6 @@ class DataVisualiser:
         else:
             fig.show()
 
-    ### - example to illustrate the effects of data augmentation - ###
     def plot_augmentation(
         self, 
         crop = 0.7,
@@ -188,6 +196,8 @@ class DataVisualiser:
         size = (500, 1000),
         st_mode = False
         ):
+        """Function to illustrate the effects of data augmentation.
+        """
         
         for i in range(n_take):
             img, _ = next(
@@ -223,5 +233,7 @@ class DataVisualiser:
     def plot_model(
         self
         ):
+        """Display the tf.keras model architecture.
+        """
         model_img = tf.keras.utils.plot_model(self.model, to_file= 'unet_model_architecture.png', show_shapes=True)
         display(model_img)

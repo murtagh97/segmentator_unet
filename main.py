@@ -6,7 +6,6 @@ from model_object import UnetModel
 
 def main(args):
     
-    # Fix random seeds and threads
     np.random.seed(args.random_seed)
     tf.random.set_seed(args.random_seed)
 
