@@ -43,7 +43,7 @@ Further information about the model architecture, training settings and hyperpar
 | data_visualizer.py | Contains the *DataVisualizer* object that plots the training procedure, segmentation results, etc.|
 | arg_parser.py | Contains parser with arguments that model training and inference can be controlled with. The defaults are set to the parameters of the final model.|
 | utils/loss_functions.py | Contains custom loss functions used for the model training.|
-| utils/train_config.py | Contains METRICS and CALLBACKS used for the model training.|
+| utils/train_config.py | Contains custom METRICS and CALLBACKS used for the model training.|
 
 ### Colab Notebooks
 
