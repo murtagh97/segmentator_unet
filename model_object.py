@@ -38,7 +38,7 @@ class UnetModel(DataVisualiser):
             bright = args.bright,
             rot_angle = args.rot_angle,
             random_seed = args.random_seed
-        )
+            )
 
         self.steps_per_epoch = DataGenerator.ds_size_train(args.train_dev_split) // args.batch_size
 
