@@ -21,8 +21,6 @@ The SCR dataset can be found <a href="https://www.isi.uu.nl/Research/Databases/S
 
 Folders <a href="https://github.com/murtagh97/segmentator_unet/tree/main/images/test_samples" target="_blank">images/train_samples</a> and <a href="https://github.com/murtagh97/segmentator_unet/tree/main/images/train_samples" target="_blank">images/test_samples</a> contain X-ray samples from the SCR dataset train and test sets.
 
-The data folder can be found **TODO**.
-
 ### Trained Model
 Folder <a href="https://github.com/murtagh97/segmentator_unet/tree/main/trained_model" target="_blank">trained_model</a> contains the weights and the training history of the final model.
 Achieved results are shown in the table below.
